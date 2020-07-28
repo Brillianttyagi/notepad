@@ -13,3 +13,5 @@ No need to install as they are inbuilt in python
 # How to run:
 step 1: Clone this repository
 step 2: open and run
+
+<img src="https://github.com/Brillianttyagi/notepad/blob/master/images/Capture.JPG?raw=true">
