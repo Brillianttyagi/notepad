@@ -1,12 +1,15 @@
+#import required lib
 from tkinter import *
 from tkinter.messagebox import showinfo
 from tkinter.filedialog import  askopenfilename , asksaveasfilename
 import os
+#function to create the file
 def newFile():
     global file
     root.title("Untitled - Notepad")
     file = None
     textarea.delete(1.0, END)
+#function to save the file
 def openFile():
     global file
     file = askopenfilename(defaultextension=".txt",
@@ -20,6 +23,7 @@ def openFile():
         f = open(file, "r")
         textarea.insert(1.0, f.read())
         f.close()
+#function to save the file
 def saveFile():
     global file
     if file == None:
@@ -41,14 +45,21 @@ def saveFile():
         f = open(file, "w")
         f.write(textarea.get(1.0, END))
         f.close()
+
+#for cut
 def cut():
     print(textarea.event_generate("<<Cut>>"))
+#for copy
 def copy():
     print(textarea.event_generate("<<Copy>>"))
+#for paste
 def paste():
     print(textarea.event_generate("<<paste>>"))
+#for about
 def about():
     showinfo("Notepad","by deepanshu tyagi")
+
+#main program
 if __name__ == "__main__":
     root = Tk()
     root.geometry("500x500")
